@@ -1,0 +1,9 @@
+# IntentUse
+最近更新
+主要为初学者提供Intent的基础用法
+这里举了几个例子
+1显示启动Activity
+2隐式启动Activity
+3使用Intent打开打电话界面。这里没有直接拨打电话所以不需要添加权限
+4使用Intent打开发短信界面。同上
+5使用Intent打开网页
