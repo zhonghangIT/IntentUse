@@ -16,6 +16,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private Button mButton4;//启动发短信
     private Button mButton5;//启动网页
     private Button mButton6;//传递数据
+    private Button mButton7;//启动自己的网页
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +28,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mButton4 = (Button) findViewById(R.id.button4);
         mButton5 = (Button) findViewById(R.id.button5);
         mButton6 = (Button) findViewById(R.id.button6);
+        mButton7 = (Button) findViewById(R.id.button7);
 
         mButton1.setOnClickListener(this);
         mButton2.setOnClickListener(this);
@@ -34,6 +36,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mButton4.setOnClickListener(this);
         mButton5.setOnClickListener(this);
         mButton6.setOnClickListener(this);
+        mButton7.setOnClickListener(this);
     }
 
     @Override
@@ -93,6 +96,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 Intent intent6 = new Intent(getApplicationContext(), FourthActivity.class);
                 intent6.putExtra("stringextra", "你是第四个界面");
                 startActivity(intent6);
+                break;
+            case R.id.button7:
+                Intent intent7 = new Intent();
+                intent7.setAction(Intent.ACTION_VIEW);
+                intent7.setData(Uri.parse("http://www.baidu.com"));
+                startActivity(intent7);
                 break;
         }
     }

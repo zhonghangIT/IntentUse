@@ -43,5 +43,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="传递数据"
+        /><Button
+        android:id="@+id/button7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="启动自己网页"
         />
 </LinearLayout>
