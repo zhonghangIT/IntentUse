@@ -15,21 +15,25 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private Button mButton3;//启动打电话
     private Button mButton4;//启动发短信
     private Button mButton5;//启动网页
+    private Button mButton6;//传递数据
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        mButton1= (Button) findViewById(R.id.button1);
-        mButton2= (Button) findViewById(R.id.button2);
-        mButton3= (Button) findViewById(R.id.button3);
-        mButton4= (Button) findViewById(R.id.button4);
-        mButton5= (Button) findViewById(R.id.button5);
+        mButton1 = (Button) findViewById(R.id.button1);
+        mButton2 = (Button) findViewById(R.id.button2);
+        mButton3 = (Button) findViewById(R.id.button3);
+        mButton4 = (Button) findViewById(R.id.button4);
+        mButton5 = (Button) findViewById(R.id.button5);
+        mButton6 = (Button) findViewById(R.id.button6);
+
         mButton1.setOnClickListener(this);
         mButton2.setOnClickListener(this);
         mButton3.setOnClickListener(this);
         mButton4.setOnClickListener(this);
         mButton5.setOnClickListener(this);
+        mButton6.setOnClickListener(this);
     }
 
     @Override
@@ -56,34 +60,39 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onClick(View v) {
-        switch (v.getId()){
+        switch (v.getId()) {
             case R.id.button1:
-                Intent intent1=new Intent(getApplicationContext(),SecondActivity.class);
+                Intent intent1 = new Intent(getApplicationContext(), SecondActivity.class);
                 startActivity(intent1);
                 break;
             case R.id.button2:
-                Intent intent2=new Intent();
+                Intent intent2 = new Intent();
                 intent2.setAction("com.lingzhuo.testthird");
                 startActivity(intent2);
                 break;
             case R.id.button3:
-                Intent intent3=new Intent( );
-                intent3.setAction( Intent.ACTION_DIAL);
+                Intent intent3 = new Intent();
+                intent3.setAction(Intent.ACTION_DIAL);
                 intent3.setData(Uri.parse("tel:18612117174"));
                 startActivity(intent3);
                 break;
             case R.id.button4:
-                Intent intent4=new Intent();
+                Intent intent4 = new Intent();
                 intent4.setAction(Intent.ACTION_SENDTO);
                 intent4.setData(Uri.parse("smsto:18612117174"));
-                intent4.putExtra("sms_body","我想发送的内容");
+                intent4.putExtra("sms_body", "我想发送的内容");
                 startActivity(intent4);
                 break;
             case R.id.button5:
-                Intent intent5=new Intent();
+                Intent intent5 = new Intent();
                 intent5.setAction(Intent.ACTION_VIEW);
                 intent5.setData(Uri.parse("http://www.baidu.com"));
                 startActivity(intent5);
+                break;
+            case R.id.button6:
+                Intent intent6 = new Intent(getApplicationContext(), FourthActivity.class);
+                intent6.putExtra("stringextra", "你是第四个界面");
+                startActivity(intent6);
                 break;
         }
     }

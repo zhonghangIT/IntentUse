@@ -23,10 +23,15 @@
         <activity
             android:name=".ThirdActivity"
             android:label="@string/title_activity_third" >
-            <intent-filter >
-                <action android:name="com.lingzhuo.testthird"></action>
-                <category android:name="android.intent.category.DEFAULT"/>
+            <intent-filter>
+                <action android:name="com.lingzhuo.testthird" />
+
+                <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name=".FourthActivity"
+            android:label="@string/title_activity_fourth" >
         </activity>
     </application>
 
